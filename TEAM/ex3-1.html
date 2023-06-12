@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습 3-1 로그인 폼 만들기</title>
+  </head>
+  <body>
+    <main>
+      <form action="./index.html" method="get">
+        <div>
+          <label for="username">사용자명:</label>
+          <input id="username" type="text" name="username" />
+        </div>
+        <div>
+          <label for="password">비밀번호:</label>
+          <input id="password" type="password" name="password" />
+        </div>
+        <div>
+          <label for="email">이메일:</label>
+          <input id="email" type="email" name="email" />
+        </div>
+        <div>
+          <label for="tel">전화번호:</label>
+          <input id="tel" type="tel" name="tel" />
+        </div>
+        <div>
+          <label for="auto-login">자동로그인:</label>
+          <input id="auto-login" type="checkbox" name="auto-login" />
+        </div>
+        <input type="button" value="초기화" />
+        <input type="submit" value="로그인" />
+      </form>
+    </main>
+  </body>
+</html>
