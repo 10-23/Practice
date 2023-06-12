@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML 실습 2(팀 단위)</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      header {
+        text-align: center;
+        background-color: cadetblue;
+        padding: 20px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+      }
+      table {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      b {
+        color: red;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 5px;
+      }
+      main {
+        padding: 20px;
+      }
+      img.profile {
+        border-radius: 50%;
+      }
+      footer {
+        padding: 20px;
+        background-color: bisque;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>과제2</h1>
+    </header>
+    <main>
+      <section>
+        <h2>
+          <p>
+            팀별로 "웅진싱크빅" 홈페이지와 "웅진IT" 홈페이지 HTML 태그를 분석하고, 시맨틱 태그를 사용해야하는 이유를
+            만들어보세요.
+          </p>
+        </h2>
+        <h3>비교대상</h3>
+        <a href="https://www.woongjin.co.kr/" target="_blank">웅진 IT</a>
+        <a href="https://www.wjthinkbig.com/index.do" target="_blank">웅진 씽크빅</a>
+        <article>
+          <table>
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>웅진IT</th>
+                <th>웅진 씽크빅</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>시맨틱 태그 사용</td>
+                <td>O</td>
+                <td>X</td>
+              </tr>
+              <tr>
+                <td>코드 파악</td>
+                <td>시맨틱 태그의 의미로 코드 의도를 파악할 수 있다.</td>
+                <td>div 태그로는 코드 의도를 파악하기 힘들다.</td>
+              </tr>
+              <tr>
+                <td>유지보수</td>
+                <td>한눈에 코드 파악이 쉬워 가독성이 향상되어, 코드 유지보수가 좋아진다.</td>
+                <td>
+                  <div>div 태그를 남발하면, 가독성이 떨어져 코드 유지보수가 어려워진다.</d>
+                  <div>
+                    또한, 코드 의미를 파악하기 위해 주석을 달면 코드양이 길어지기 때문에 가독성 저하 이슈가 발생한다.
+                  </d>
+                </td>
+              </tr>
+              <tr>
+                <td>SEO</td>
+                <td>좋음</td>
+                <td>좋지 않음</td>
+              </tr>
+              <tr>
+                <td>고쳐야할 점</td>
+                <td>-</td>
+                <td>시맨틱 태그를 자주 사용하자</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>저작권 ⓒ 2023 Copy Right Reserved</p>
+      <small>해당 코드는 유데미x스나이퍼팩토리에서 진행한 두번째 실습 내용입니다.</small>
+    </footer>
+  </body>
+</html>
