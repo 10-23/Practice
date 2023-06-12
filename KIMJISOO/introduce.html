@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기소개 페이지</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background-color: darkslategray;
+            color: white;
+            padding: 50px;
+        }
+
+        h1 {
+            margin-left: 20px;
+        }
+
+        main {
+            display: flex;
+            height:100vh;
+            min-height: 100%;
+            background-color: rgba(143, 188, 143, 0.071);
+        }
+
+        .profile {
+            width: 550px;
+            height: 450px;
+            overflow: hidden;
+            margin-left: 20px;
+            margin-top: 30px;
+            border-radius: 10%;
+        }
+
+        img {
+            max-width: 100%;
+            transition: all .3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        #profile p {
+            font-weight: bold;
+            font-size: 48px;
+            text-align: center;
+        }
+
+        #profile ul li {
+            list-style-type: none;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: darkslategray;
+            color: white;
+            padding: 30px;
+            text-align: center;            
+        }
+    </style>
+</head>
+<body>
+    <!-- 조건
+    1. 시맨틱 태그 사용
+    2. 배운 HTML 태그 10개 이상 사용(dl,dt,dd 태그 포함)
+    3. 나에 대하여 최소 10개 이상 작성(MBTI, 취미, 특기 등) -->
+    <header><h1>Who am I?</h1></header>
+    <main>
+        <div class="profile">
+            <img src="/profile.jpeg" alt="profile">
+        </div>
+        <div id="profile"> 
+            <p>profile🥰</p>
+            <ul>
+                <li>이름 : 김지수</li>
+                <li>사는 곳 : 서울</li>
+                <li>MBTI : ENTP</li>
+                <li>개발경력 : 6개월</li>
+                <li>취미 : 책 읽기, 야구 직관가기</li>
+                <li>고양이키우는 집사🐈</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <small>Copyright © 2023 by 김지수 All rights reserved.</small>
+    </footer>
+</body>
+</html>
