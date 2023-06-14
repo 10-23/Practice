@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자기소개 페이지</title>
+    <script src="https://kit.fontawesome.com/158c15f629.js" crossorigin="anonymous"></script>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
+            justify-content: center;
+            align-items: center;
         }
 
         header {
             background-color: darkslategray;
             color: white;
             padding: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header a {
+            text-decoration: none;
+            color: white;
         }
 
         h1 {
@@ -24,13 +34,13 @@
         main {
             display: flex;
             height:100vh;
-            min-height: 100%;
+            /* min-height: 100%; */
             background-color: rgba(143, 188, 143, 0.071);
         }
 
         .profile {
             width: 550px;
-            height: 450px;
+            height: 550px;
             overflow: hidden;
             margin-left: 20px;
             margin-top: 30px;
@@ -55,7 +65,7 @@
         #profile ul li {
             list-style-type: none;
             font-size: 20px;
-            margin-bottom: 20px;
+            margin: 20px 20px;
         }
 
         footer {
@@ -64,6 +74,18 @@
             padding: 30px;
             text-align: center;            
         }
+
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+            #profile p {
+                color:olivedrab;
+            }
+            #profile ul li {
+                color: forestgreen;
+            }
+        }
     </style>
 </head>
 <body>
@@ -71,10 +93,13 @@
     1. 시맨틱 태그 사용
     2. 배운 HTML 태그 10개 이상 사용(dl,dt,dd 태그 포함)
     3. 나에 대하여 최소 10개 이상 작성(MBTI, 취미, 특기 등) -->
-    <header><h1>Who am I?</h1></header>
+    <header>
+        <h1>Who am I?</h1>
+        <a href="https://github.com/zi9oojj"><i class="fa-brands fa-github"></i> https://github.com/zi9oojj</a>
+    </header>
     <main>
         <div class="profile">
-            <img src="/profile.jpeg" alt="profile">
+            <img src="./assets/profile.jpeg" alt="profile">
         </div>
         <div id="profile"> 
             <p>profile🥰</p>

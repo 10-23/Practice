@@ -1,0 +1,16 @@
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    position: relative;
+    z-index:-1;
+}
+.overlay {
+    width: 150px;
+    height: 150px;
+    background-color: yellowgreen;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index:0;
+}
