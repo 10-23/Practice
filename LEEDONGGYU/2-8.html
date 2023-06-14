@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 500px;
+        height: 500px;
+
+        position: relative;
+
+        background-color: tomato;
+      }
+      .box .box {
+        width: 400px;
+        height: 400px;
+
+        position: absolute;
+        right: 10px;
+
+        bottom: 10px;
+        background-color: skyblue;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>

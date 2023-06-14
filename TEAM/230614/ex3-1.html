@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      main {
+        height: 300vh;
+      }
+      nav {
+        width: 1600px;
+        padding: 20px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: sticky;
+        top: 0;
+        left: 0;
+      }
+      .logo {
+        width: 80px;
+      }
+      .navigation-list {
+        display: grid;
+        list-style: none;
+        grid-template-columns: repeat(6, 1fr);
+        justify-items: center;
+        align-items: center;
+        font-weight: 700;
+        gap: 10px;
+      }
+
+      .navigation-item {
+        flex-grow: 1;
+      }
+      .login {
+        margin: 0 30px 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1><img class="logo" src="./sfac.svg" alt="SFAC logo" /></h1>
+      <ul class="navigation-list">
+        <li class="navigation-item">스팩소개</li>
+        <li class="navigation-item">교육과정</li>
+        <li class="navigation-item">공지사항</li>
+        <li class="navigation-item">수료생 커뮤니티</li>
+        <li class="navigation-item">협력사</li>
+        <li class="navigation-item">스팩블로그</li>
+      </ul>
+      <div class="login">로그인</div>
+    </nav>
+    <main></main>
+  </body>
+</html>

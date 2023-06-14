@@ -1,0 +1,25 @@
+.container span {
+  font-size: 50px;
+}
+
+.container {
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container span:hover+.dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-content a {
+  display: block;
+  font-size: 30px;
+}

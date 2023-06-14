@@ -1,0 +1,20 @@
+.box {
+  width: 500px;
+  height: 500px;
+
+  position: relative;
+
+  background-color: tomato;
+}
+
+.box .box {
+  width: 400px;
+  height: 400px;
+
+  position: absolute;
+  right: -100px;
+  bottom: -100px;
+
+  background-color: skyblue;
+  z-index: 1;
+}

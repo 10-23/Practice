@@ -6,14 +6,16 @@
     <title>HTML 실습 1(팀 단위)</title>
     <style>
       body {
-        padding: 0;
         margin: 0;
+        padding: 0;
         box-sizing: border-box;
       }
       header {
-        text-align: center;
-        background-color: cadetblue;
-        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f2f3f4;
+        padding: 10px 30px;
       }
       h1,
       h2,
@@ -23,13 +25,14 @@
       h6 {
         margin: 0;
       }
+      ul,
+      li {
+        list-style: none;
+      }
       table {
         text-align: center;
         border: 1px solid black;
         border-collapse: collapse;
-      }
-      b {
-        color: red;
       }
       th,
       td {
@@ -39,6 +42,10 @@
       main {
         padding: 20px;
       }
+      a,
+      a:visited {
+        color: black;
+      }
       img.profile {
         border-radius: 50%;
       }
@@ -47,22 +54,51 @@
         background-color: bisque;
         text-align: center;
       }
+      .inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+      .greetings {
+        font-size: 30px;
+        line-height: 2;
+      }
+      .greetings b {
+        text-decoration: underline;
+      }
+      .information {
+        display: flex;
+        justify-content: center;
+      }
+      @media screen and (max-width: 768px) {
+      }
     </style>
+    <script defer src="https://kit.fontawesome.com/56592f87eb.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
       <h1>자기소개</h1>
+      <ul>
+        <li></li>
+      </ul>
     </header>
     <main>
-      <section>
-        <h2>목표</h2>
-        <p>나에 대하여 HTML 태그를 작성하고, 같은 팀에 공유하고 자기소개하기</p>
+      <section class="introduce">
+        <div class="inner">
+          <h2>
+            <img class="profile" src="./image/profile/me.png" alt="profile" width="200px" />
+          </h2>
+          <div>
+            <h4 class="greetings">
+              안녕하세요 👋 <br />
+              프론트엔드 개발자 <b>이동규</b>입니다.
+            </h4>
+          </div>
+        </div>
       </section>
-      <section>
-        <h3>
-          <p><i>안녕하세요</i> 제 이름은 <b>이동규</b>입니다.</p>
-          <img class="profile" src="/profile.png" alt="profile" width="200px" />
-        </h3>
+      <section class="information">
         <article>
           <table>
             <thead>
@@ -119,7 +155,10 @@
     </main>
     <footer>
       <p>저작권 ⓒ 2023 Copy Right Reserved</p>
-      <small>해당 코드는 유데미x스나이퍼팩토리에서 진행한 첫번째 실습 내용입니다.</small>
+      <a href="https://github.com/tenenger7125">
+        <i class="fa-brands fa-github"></i>
+        https://github.com/tenenger7125
+      </a>
     </footer>
   </body>
 </html>
