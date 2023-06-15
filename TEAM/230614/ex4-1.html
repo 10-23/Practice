@@ -4,12 +4,239 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .title {
+        margin-bottom: 16px;
+      }
+      .card-list {
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+        gap: 16px;
+      }
+      .card {
+        width: 320px;
+        font-size: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 1px 3px 0 rgb(229, 231, 235);
+      }
+      .card article {
+        padding: 16px;
+      }
+      .card .lecture-image-container {
+        position: relative;
+      }
+      .card .lecture-image {
+        width: 100%;
+        height: 153px;
+        transition: 0.2s ease-in-out;
+        filter: brightness(80%);
+        object-fit: cover;
+      }
+      .card .lecture-image:hover {
+        filter: brightness(100%);
+        transform: scale(1.1);
+      }
+      .card .title {
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        margin: 8px 0 4px;
+      }
+      .card .description {
+        color: #9ca3af;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+      }
+      .card .badge {
+        font-weight: 700;
+        border-radius: 10px;
+        padding: 2px 8px;
+      }
+      .card .badge.absolute {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+      .card .badge.green {
+        color: rgb(22, 163, 74);
+        background-color: rgb(220, 252, 231);
+      }
+      .card .badge.gray {
+        color: rgb(156, 163, 175);
+        background-color: rgb(243, 244, 246);
+      }
+      .card .badge.purple {
+        color: rgb(147, 51, 234);
+        background-color: rgb(243, 232, 255);
+      }
+      .card .extra-information {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 16px 0;
+      }
+      .card .link {
+        width: 100%;
+        padding: 8px 0;
+        font-size: 14px;
+        background-color: #3b82f6;
+        border-radius: 8px;
+        border: none;
+        color: #fff;
+        font-weight: 700;
+      }
+      .card .link.gray {
+        background-color: rgb(156, 163, 175);
+      }
+      .card .link i {
+        padding-right: 5px;
+      }
+    </style>
+    <script defer src="https://kit.fontawesome.com/56592f87eb.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <h2>교육과정</h2>
+    <h2 class="title">교육과정</h2>
     <div class="container">
-      <div class="card">
-        <img src="https://p" alt="" />
+      <div class="card-list">
+        <div class="card">
+          <div class="lecture-image-container">
+            <img class="lecture-image" src="./flutter3rd_qdbQ03hu4U.png" alt="" />
+            <div class="badge purple absolute">스팩</div>
+          </div>
+          <article>
+            <span class="badge green">신청가능</span>
+            <h5 class="title">Flutter 모바일 어플리케이션 개발 부트캠프</h5>
+            <p class="description">
+              4개월 간 스나이퍼팩토리와 함께 Flutter로 "내가 원하는 어플리케이션"을 만들어보는 시간입니다.Flutter와
+              Dart의 기초부터 슴화, 응용까지 배워보고
+            </p>
+            <div class="extra-information">
+              <div class="badge gray">취업연계과정</div>
+              <div class="generation">
+                <span>기수 : 3기</span>
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+            </div>
+            <button class="link"><i class="fa-regular fa-circle-play"></i>더 알아보기</button>
+          </article>
+        </div>
+        <div class="card">
+          <div class="lecture-image-container">
+            <img class="lecture-image" src="./fdf_sdNeiK2qub.jpg" alt="" />
+            <div class="badge purple absolute">유데미x웅진씽크빅x스팩</div>
+          </div>
+          <article>
+            <span class="badge green">신청가능</span>
+            <h5 class="title">10주 완성! 프로젝트 캠프 : 프론트엔드(리액트)</h5>
+            <p class="description">
+              [유데미x웅진씽크빅x스나이퍼팩토리] 10주 완성! 프로젝트 캠프 : 프론트엔드(리액트) 과정
+            </p>
+            <div class="extra-information">
+              <div class="badge gray">무료교육과정</div>
+              <div class="generation">
+                <span>기수 : 1기</span>
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+            </div>
+            <button class="link"><i class="fa-regular fa-circle-play"></i>더 알아보기</button>
+          </article>
+        </div>
+        <div class="card">
+          <div class="lecture-image-container">
+            <img class="lecture-image" src="./_Hbe76al6xE_JSNHDWvOkq.jpg" alt="" />
+            <div class="badge purple absolute">KITRIx스팩</div>
+          </div>
+          <article>
+            <span class="badge green">신청가능</span>
+            <h5 class="title">사업계획서 작성방법</h5>
+            <p class="description">[KITRI(한국정보기술연구원) x SFAC] 사업계획서 작성방법 무료 특강</p>
+            <div class="extra-information">
+              <div class="badge gray">무료교육과정</div>
+              <div class="generation">
+                <span>기수 : 1기</span>
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+            </div>
+            <button class="link"><i class="fa-regular fa-circle-play"></i>더 알아보기</button>
+          </article>
+        </div>
+
+        <div class="card">
+          <div class="lecture-image-container">
+            <img class="lecture-image" src="./0101_Zk1cFPX7Zq.jpg" alt="" />
+            <div class="badge purple absolute">KITRIx스팩</div>
+          </div>
+          <article>
+            <span class="badge gray">신청마감</span>
+            <h5 class="title">리액트를 활용한 웹 시스템 개발 과정</h5>
+            <p class="description">[KITRI(한국정보기술연구원) x SFAC] 리액트를 활용한 웹 시스템 개발 과정 무료 교육</p>
+            <div class="extra-information">
+              <div class="badge gray">무료교육과정</div>
+              <div class="generation">
+                <span>기수 : 1기</span>
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+            </div>
+            <button class="link gray"><i class="fa-regular fa-circle-play"></i>더 알아보기</button>
+          </article>
+        </div>
+
+        <div class="card">
+          <div class="lecture-image-container">
+            <img class="lecture-image" src="./_JU4TZgKwgg_mBzaW7y5jn.jpg" alt="" />
+            <div class="badge purple absolute">KITRIx스팩</div>
+          </div>
+          <article>
+            <span class="badge gray">신청마감</span>
+            <h5 class="title">데이터와 알고리즘에 대한 이해를 기반으로 한 인공지능 활용 과정</h5>
+            <p class="description">[KITRI(한국정보기술연구원) x SFAC] 인공지능 전문가와 함께하는 인공지능 과정 교육!</p>
+            <div class="extra-information">
+              <div class="badge gray">무료교육과정</div>
+              <div class="generation">
+                <span>기수 : 1기</span>
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+            </div>
+            <button class="link gray"><i class="fa-regular fa-circle-play"></i>더 알아보기</button>
+          </article>
+        </div>
+
+        <div class="card">
+          <div class="lecture-image-container">
+            <img class="lecture-image" src="./fdg_173ZfWhd4B.jpg" alt="" />
+            <div class="badge purple absolute">KITRIx스팩</div>
+          </div>
+          <article>
+            <span class="badge green">신청가능</span>
+            <h5 class="title">하루만에 샆려보는 데이터분석 맛보기 과정</h5>
+            <p class="description">
+              [KITRI(한국정보기술연구원) x SFAC] 금융 대기업 실무진과 함께하는 데이터 분석 하루교육!
+            </p>
+            <div class="extra-information">
+              <div class="badge gray">무료교육과정</div>
+              <div class="generation">
+                <span>기수 : 1기</span>
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+            </div>
+            <button class="link"><i class="fa-regular fa-circle-play"></i>더 알아보기</button>
+          </article>
+        </div>
       </div>
     </div>
   </body>
