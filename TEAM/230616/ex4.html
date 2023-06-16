@@ -13,23 +13,28 @@
         img {
             width: 500px;
         }
-        i:hover {
-            cursor: pointer;
-        }
         .container {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 20px;
         }
+        .button {
+            background-color: #c0c0c0;
+            width: 100px;
+            border-radius: 15px;
+        }
+        .button:hover {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <h1>화살표를 눌러보세욘😆</h1>
     <div class="container">
-        <i class="fa-solid fa-arrow-left" id="prev"></i>
+        <div id="prev" class="button"><i class="fa-solid fa-arrow-left"></i></div>
         <img class="image" src="" alt="">
-        <i class="fa-solid fa-arrow-right" id="next"></i>
+        <div id="next" class="button"><i class="fa-solid fa-arrow-right"></i></div>
     </div>
 
     <script>
