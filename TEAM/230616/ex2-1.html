@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img class="image" alt="random-image" />
+    <script>
+      const $image = document.querySelector(".image");
+      const imgURL = [
+        "https://i.namu.wiki/i/UAHp_lrjF5uVrVYQZtazyG4u1rAY0hu7FiBPJczYvH-csg2on7F6ZfDECLHaYiKIgossk_FcrH9Z8NdkgwsAtw.webp",
+        "https://i.namu.wiki/i/yn3Lp6JiAsDmAZ-DBKxL631lJ3DkE6WUpXCBzxsxsCGdMMOCr6upM81nExKs4aU797We7-InxGLcu13xbd3fYg.webp",
+        "https://i.namu.wiki/i/6nJq7Dza9kRKQbvw-EBUHqArvnLuKWGqeaWTT5odfIp1mJnrJNuLRe5hmxC3eXQtB0_1sQiknnDOpT0-kz1baA.webp",
+      ];
+      let idx = 0;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        $image.src = imgURL[idx];
+      });
+
+      $image.addEventListener("click", () => {
+        idx = Math.floor(imgURL.length * Math.random());
+        console.log(idx);
+        $image.src = imgURL[idx];
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .slides {
+        --slide-idx: 0;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        margin: 0 auto;
+      }
+      .container {
+        display: flex;
+        transform: translateX(calc(var(--slide-idx) * -100%));
+      }
+      .slide {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slides"></div>
+    <button class="left">left</button>
+    <button class="right">right</button>
+    <script>
+      const imgURL = [
+        "https://i.namu.wiki/i/UAHp_lrjF5uVrVYQZtazyG4u1rAY0hu7FiBPJczYvH-csg2on7F6ZfDECLHaYiKIgossk_FcrH9Z8NdkgwsAtw.webp",
+        "https://i.namu.wiki/i/yn3Lp6JiAsDmAZ-DBKxL631lJ3DkE6WUpXCBzxsxsCGdMMOCr6upM81nExKs4aU797We7-InxGLcu13xbd3fYg.webp",
+        "https://i.namu.wiki/i/6nJq7Dza9kRKQbvw-EBUHqArvnLuKWGqeaWTT5odfIp1mJnrJNuLRe5hmxC3eXQtB0_1sQiknnDOpT0-kz1baA.webp",
+      ];
+      const $slides = document.querySelector(".slides");
+      const $left = document.querySelector(".left");
+      const $right = document.querySelector(".right");
+
+      $slides.innerHTML = `
+        <div class="container">
+          ${imgURL
+            .map(
+              (url, idx) => `
+            <img src="${url}" alt=이미지${idx + 1} class="slide" />
+          `
+            )
+            .join("")}
+        </div>
+      `;
+
+      $left.addEventListener("click", () => {
+        const slides = getComputedStyle($slides);
+        const slideIdx = slides.getPropertyValue("--slide-idx");
+
+        $slides.style.setProperty("--slide-idx", +slideIdx === 0 ? imgURL.length - 1 : +slideIdx - 1);
+      });
+      $right.addEventListener("click", () => {
+        const slides = getComputedStyle($slides);
+        const slideIdx = slides.getPropertyValue("--slide-idx");
+
+        $slides.style.setProperty("--slide-idx", +slideIdx === imgURL.length - 1 ? 0 : +slideIdx + 1);
+      });
+    </script>
+  </body>
+</html>

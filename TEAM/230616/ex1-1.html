@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form class="add-form">
+      <input type="text" name="number1" />
+      <input type="text" name="number2" />
+      <button type="submit">+</button>
+    </form>
+    <form class="subtract-form">
+      <input type="text" name="number1" />
+      <input type="text" name="number2" />
+      <button type="submit">-</button>
+    </form>
+    <form class="multiple-form">
+      <input type="text" name="number1" />
+      <input type="text" name="number2" />
+      <button type="submit">*</button>
+    </form>
+    <form class="divide-form">
+      <input type="text" name="number1" />
+      <input type="text" name="number2" />
+      <button type="submit">/</button>
+    </form>
+
+    <div class="result"></div>
+
+    <script>
+      const $addForm = document.querySelector(".add-form");
+      const $subtractForm = document.querySelector(".subtract-form");
+      const $multipleForm = document.querySelector(".multiple-form");
+      const $divideForm = document.querySelector(".divide-form");
+      const $result = document.querySelector(".result");
+
+      function add(a, b) {
+        return a + b;
+      }
+      function subtract(a, b) {
+        return a - b;
+      }
+      function multiple(a, b) {
+        return a * b;
+      }
+      function divide(a, b) {
+        return Math.floor(a / b);
+      }
+
+      $addForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const { number1, number2 } = e.target;
+        $result.innerHTML = add(+number1.value, +number2.value);
+      });
+      $subtractForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const { number1, number2 } = e.target;
+        $result.innerHTML = subtract(+number1.value, +number2.value);
+      });
+      $multipleForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const { number1, number2 } = e.target;
+        $result.innerHTML = multiple(+number1.value, +number2.value);
+      });
+      $divideForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const { number1, number2 } = e.target;
+        $result.innerHTML = divide(+number1.value, +number2.value);
+      });
+    </script>
+  </body>
+</html>
