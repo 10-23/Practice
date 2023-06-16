@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습3 - 실시간 시계</title>
+    <style>
+        body {
+            text-align: center;
+            border: 3px dotted skyblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>지금은...</h1>
+    <h3 class="clock"></h3>
+    <script>
+        const clock = document.querySelector('.clock');
+
+        const getTime = () => {
+            const time = new Date();
+            const dayNames = ['일', '월', '화', '수', '목', '금', '토']
+
+            const year = time.getFullYear();
+            const month = String(time.getMonth()).padStart(2, "0");
+            const dates = String(time.getDate()).padStart(2, "0");
+            const days = time.getDay();
+            const day = dayNames[days];
+            const hour = String(time.getHours()).padStart(2, "0");
+            const minutes = String(time.getMinutes()).padStart(2, "0");
+            const seconds = String(time.getSeconds()).padStart(2, "0");
+
+            clock.innerHTML = `${year}년 ${month}월 ${dates}일 ${day}요일 ${hour}시 ${minutes}분 ${seconds}초`;
+        }
+
+        getTime();
+        setInterval(getTime, 1000);
+    </script>
+</body>
+</html>

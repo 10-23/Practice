@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습1 - 계산기</title>
+</head>
+<body>
+    <h1>계산기</h1>
+    <form id="plus">
+        <input type="text" name="num1">
+        <input type="text" name="num2">
+        <input class="plusButton" type="submit" value="+">
+        <span class="plusResult"></span>
+    </form>
+    <form id="minus">
+        <input type="text" name="num1">
+        <input type="text" name="num2">
+        <input class="minusButton" type="submit" value="-">
+        <span class="minusResult"></span>
+    </form>
+    <form id="multiply">
+        <input type="text" name="num1">
+        <input type="text" name="num2">
+        <input class="multiplyButton" type="submit" value="x">
+        <span class="multiplyResult"></span>
+    </form>
+    <form id="divide">
+        <input type="text" name="num1">
+        <input type="text" name="num2">
+        <input class="divideButton" type="submit" value="÷">
+        <span class="divideResult"></span>
+    </form>
+    <script>
+        const plus = document.querySelector('#plus');
+        const plusResult = document.querySelector('.plusResult');
+    
+        const minus = document.querySelector('#minus');
+        const minusResult = document.querySelector('.minusResult');
+    
+        const multiply = document.querySelector('#multiply');
+        const multiplyResult = document.querySelector('.multiplyResult');
+    
+        const divide = document.querySelector('#divide');
+        const divideResult = document.querySelector('.divideResult');
+    
+        const add = (a, b) => {
+            return a + b;
+        }
+        const subtract = (a, b) => {
+            return a - b;
+        }
+        const multi = (a, b) => {
+            return a * b;
+        }
+        const division = (a, b) => {
+            return a / b;
+        }
+    
+        plus.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const {num1, num2} = e.target
+            plusResult.innerHTML = add(+num1.value, +num2.value);
+        })
+    
+        minus.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const {num1, num2} = e.target
+            minusResult.innerHTML = subtract(+num1.value, +num2.value);
+        })
+    
+        multiply.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const {num1, num2} = e.target
+            multiplyResult.innerHTML = multi(+num1.value, +num2.value);
+        })
+    
+        divide.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const {num1, num2} = e.target
+            divideResult.innerHTML = division(+num1.value, +num2.value);
+        })
+    </script>
+</body>
+</html>

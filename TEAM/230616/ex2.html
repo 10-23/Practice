@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습2 - 이미지 랜덤 변환</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        img {
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>이미지를 클릭해보세요!!!</h1>
+    <img class="image" src="" alt="">
+    <script>
+        const image = document.querySelector('.image');
+        const imgUrl = [
+            "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FFa0z1%2Fbtrbh27Gr1T%2FPJou5eLpqt6u9dKZHNzi91%2Fimg.jpg",
+            "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbLLREg%2FbtrbhYLdx4M%2Fw3BWXIjm185YfkGITrU9HK%2Fimg.jpg",
+            "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbwpThm%2Fbtra8z6Y46K%2F5f8tPm8xKDNOpyZXp9P7q1%2Fimg.jpg",
+            "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbBEeqn%2Fbtrbgo4oFM3%2FKAtmtDP1fPZJWgTvUpK7bK%2Fimg.jpg",
+            "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc2nFnt%2FbtrbhZwyzNu%2FL2eDKnk1Sx4Lf29crOAky0%2Fimg.jpg",
+            "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb3ejPJ%2FbtrbgjhyexF%2FMMwkurSkbYycHVLuzWf670%2Fimg.jpg",
+            "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbTRbPz%2FbtrbahR8qTX%2FLIUGO6Ywm0awUCgVwT2Ew0%2Fimg.jpg", 
+        ]
+        let idx = 0;
+
+        document.addEventListener('DOMContentLoaded', () => image.src = imgUrl[idx]);
+
+        image.addEventListener('click', ()=> {
+            idx = Math.floor(imgUrl.length * Math.random());
+            image.src = imgUrl[idx];
+        });
+    </script>
+</body>
+</html>
