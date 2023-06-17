@@ -13,6 +13,9 @@
         --heavy-gray-color: #6b7684;
         --black-color: #333d4b;
       }
+      body {
+        /* overflow-x: hidden; */
+      }
       * {
         padding: 0;
         margin: 0;
@@ -24,7 +27,7 @@
         text-decoration: none;
       }
       header {
-        width: 1020px;
+        max-width: 1020px;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -138,7 +141,7 @@
         margin: 125px 0;
       }
       section.introduce .inner {
-        width: 975px;
+        max-width: 975px;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
@@ -153,7 +156,7 @@
         margin: 193px 0;
       }
       section.issue .inner {
-        width: 975px;
+        max-width: 975px;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
@@ -165,7 +168,7 @@
         margin: 193px 0;
       }
       section.check-list .inner {
-        width: 975px;
+        max-width: 975px;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
@@ -180,7 +183,7 @@
         margin: 193px 0;
       }
       section.example .inner {
-        width: 1200px;
+        max-width: 1200px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -191,6 +194,7 @@
       }
       section.example .inner .phone-use-case {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
       }
       section.example .inner .phone-use-case .check-item {
@@ -265,9 +269,6 @@
       section.review {
         text-align: center;
         margin: 181px 0;
-      }
-      section.review .inner {
-        overflow: hidden;
       }
       section.review .inner .slides {
         display: flex;
@@ -352,6 +353,26 @@
       }
       footer .detail address {
         font-style: normal;
+      }
+
+      @media screen and (max-width: 1024px) {
+        .sub-title {
+          font-size: 32px;
+        }
+        section.introduce .inner,
+        section.issue .inner,
+        section.check-list .inner {
+          max-width: 635px;
+        }
+        section.example .inner {
+          max-width: 500px;
+        }
+        section.example .inner .phone-use-case {
+          justify-content: center;
+        }
+        section.example .inner .phone-use-case .check-item {
+          text-align: center;
+        }
       }
     </style>
   </head>
