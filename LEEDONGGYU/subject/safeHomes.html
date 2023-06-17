@@ -194,13 +194,19 @@
       }
       section.example .inner .phone-use-case {
         display: flex;
+        flex-direction: row-reverse;
         flex-wrap: wrap;
         justify-content: space-between;
+      }
+
+      section.example .inner .phone-use-case.reverse {
+        flex-direction: row;
       }
       section.example .inner .phone-use-case .check-item {
         flex-basis: 508px;
         gap: 21px;
         letter-spacing: -1.8px;
+        margin-bottom: 25px;
       }
       section.example .inner .phone-use-case .check-item h4.subject {
         color: var(--green-color);
@@ -223,9 +229,10 @@
         margin: 193px 0;
       }
       section.service .inner {
-        width: 1200px;
+        max-width: 1084px;
         margin: 0 auto;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 32px;
       }
@@ -361,13 +368,17 @@
         }
         section.introduce .inner,
         section.issue .inner,
-        section.check-list .inner {
+        section.check-list .inner,
+        section.example .inner {
           max-width: 635px;
         }
-        section.example .inner {
-          max-width: 500px;
+        section.service .inner {
+          justify-content: left;
+          max-width: 712px;
         }
-        section.example .inner .phone-use-case {
+        section.example .inner .phone-use-case,
+        section.example .inner .phone-use-case.reverse {
+          flex-direction: row-reverse;
           justify-content: center;
         }
         section.example .inner .phone-use-case .check-item {
@@ -482,7 +493,6 @@
       <section class="example">
         <div class="inner">
           <article class="phone-use-case">
-            <img src="../image/safe_homes/phone.png" alt="phone-use-case-image" />
             <article class="check-item">
               <h4 class="subject">리포트</h4>
               <h4>
@@ -491,8 +501,9 @@
               </h4>
               <p>어려운 부동산 법률 용어가 아닌, 누구나 쉽게 이해 할 수 있는 보증금 지킴이 리포트 제공</p>
             </article>
+            <img src="../image/safe_homes/phone.png" alt="phone-use-case-image" />
           </article>
-          <article class="phone-use-case">
+          <article class="phone-use-case reverse">
             <article class="check-item">
               <h4 class="subject">절차</h4>
               <h4>
@@ -504,7 +515,6 @@
             <img src="../image/safe_homes/phone.png" alt="phone-use-case-image" />
           </article>
           <article class="phone-use-case">
-            <img src="../image/safe_homes/phone.png" alt="phone-use-case-image" />
             <article class="check-item">
               <h4 class="subject">알림</h4>
               <h4>
@@ -515,6 +525,7 @@
               <img src="../image/safe_homes/message1.png" alt="phone-message-image" />
               <img src="../image/safe_homes/message2.png" alt="phone-message-image" />
             </article>
+            <img src="../image/safe_homes/phone.png" alt="phone-use-case-image" />
           </article>
         </div>
       </section>
