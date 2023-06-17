@@ -152,8 +152,8 @@
       section.introduce .inner {
         max-width: 975px;
         margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 48px;
       }
       section.introduce .link {
@@ -167,8 +167,8 @@
       section.issue .inner {
         max-width: 975px;
         margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 48px;
       }
 
@@ -179,8 +179,8 @@
       section.check-list .inner {
         max-width: 975px;
         margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 57px 48px;
       }
       section.check-list .link {
@@ -240,9 +240,8 @@
       section.service .inner {
         max-width: 1084px;
         margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 32px;
       }
       section.service .inner .service-card {
@@ -372,6 +371,10 @@
       }
 
       @media screen and (max-width: 1024px) {
+        header {
+          max-width: 900px;
+          padding: 0 24px;
+        }
         .sub-title {
           font-size: 32px;
         }
@@ -380,10 +383,11 @@
         section.check-list .inner,
         section.example .inner {
           max-width: 635px;
+          grid-template-columns: repeat(2, 293px);
         }
         section.service .inner {
-          justify-content: left;
           max-width: 712px;
+          grid-template-columns: repeat(2, 340px);
         }
         section.example .inner .phone-use-case,
         section.example .inner .phone-use-case.reverse {
@@ -393,6 +397,44 @@
         section.example .inner .phone-use-case .check-item {
           text-align: center;
         }
+        section.danger .inner h2 {
+          font-size: 48px;
+        }
+        section.danger .link,
+        header .question,
+        section.introduce .link {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        section.danger .inner h2 {
+          font-size: 36px;
+        }
+        section.start h2 {
+          font-size: 48px;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        section.danger .inner h2 {
+          font-size: 24px;
+        }
+        section.introduce .inner,
+        section.issue .inner,
+        section.check-list .inner,
+        section.example .inner {
+          max-width: 293px;
+          grid-template-columns: repeat(1, 293px);
+        }
+        section.service .inner {
+          max-width: 340px;
+          grid-template-columns: repeat(1, 340px);
+        }
+        .sub-title {
+          font-size: 21px;
+        }
+        section.start h2 {
+          font-size: 36px;
+        }
       }
     </style>
   </head>
@@ -400,11 +442,11 @@
     <header>
       <h1 class="logo">
         <a href="#">
-          <img src="../image//safe_homes/logo.svg" alt="safe-homes-logo" />
+          <img src="../image/safe_homes/logo.svg" alt="safe-homes-logo" />
         </a>
       </h1>
       <div>
-        <button class="primary" type="button">문의하기</button>
+        <button class="primary question" type="button">문의하기</button>
         <button class="secondary" type="button">시작하기</button>
       </div>
     </header>
