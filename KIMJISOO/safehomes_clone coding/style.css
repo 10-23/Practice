@@ -249,12 +249,31 @@ article.price-card button {
 }
 
 section.content .review-content-container {
+    /* display: flex;
+    justify-content: center;
+    gap: 42px; */
+    position: relative;
+    overflow: hidden;
+}
+
+section.content .review-content-container .slide-track {
     display: flex;
     justify-content: center;
     gap: 42px;
+    animation: carousel 20s linear infinite;
+    width: calc(680px * 6);
 }
 
-article.review-card {
+@keyframes carousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-680px * 3));
+    }
+}
+
+article.review-card-slide {
     width: 680px;
     height: 360px;
     border-radius: 16px;
@@ -267,18 +286,18 @@ article.review-card {
     gap: 34px;
 }
 
-article.review-card .user {
+article.review-card-slide .user {
     display: flex;
     gap: 16px;
 }
 
-article.review-card .user .name {
+article.review-card-slide .user .name {
     font-weight: 700;
     font-size: 18px;
     color: var(--title-color);
 }
 
-article.review-card .description {
+article.review-card-slide .description {
     font-weight: 500;
     font-size: 18px;
     color: var(--description-color);
