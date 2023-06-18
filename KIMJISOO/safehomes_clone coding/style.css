@@ -91,6 +91,7 @@ header {
     color: var(--white-color);
     font-weight: 500;
     font-size: 24px;
+    letter-spacing: -0.9px;
 }
 
 section.content {
@@ -102,10 +103,12 @@ section.content h2 {
     color: var(--main-color);
     font-size: 48px;
     margin-bottom: 53px;
+    letter-spacing: -1.8px;
 }
 
 section.content h2 span {
     font-weight: 500;
+    letter-spacing: -1.8px;
 }
 
 section.content .content-container {
@@ -122,6 +125,7 @@ section.content .text-arrow {
     font-size: 18px;
     margin-top: 70px;
     display: inline-block;
+    letter-spacing: -0.7px;
 }
 
 article.card {
@@ -132,16 +136,26 @@ article.card {
     text-align: left;
 }
 
+article.card .title {
+    letter-spacing: -1.8px;
+}
+
+article.card .description {
+    letter-spacing: -0.9px;
+}
+
 article .title {
     color: var(--title-color);
     font-weight: 700;
-    font-size: 21px
+    font-size: 21px;
+    letter-spacing: -0.8px;
 }
 
 article .description {
     color: var(--description-color);
     font-weight: 500;
     font-size: 16px;
+    letter-spacing: -0.6px;
 }
 
 article.text-item {
@@ -190,12 +204,14 @@ article.phone-item .phone-text-item .title-color {
     color: var(--main-color);
     font-weight: 700;
     font-size: 24px;
+    letter-spacing: -0.9px;
 }
 
 article.phone-item .phone-text-item .title {
     color: var(--title-color);
     font-weight: 700;
     font-size: 48px;
+    letter-spacing: -1.8px;
 }
 
 article.phone-item .phone-text-item .description {
@@ -317,7 +333,8 @@ section.start {
 
 section.start h2 {
     font-weight: 700;
-    font-size: 60px
+    font-size: 60px;
+    letter-spacing: -2.24px;
 }
 
 section.start button {
@@ -387,5 +404,52 @@ footer {
     }
     article.phone-item .phone-text-item img {
         display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        #mainPage .main-desc p {
+            font-size: 36px;
+        }
+        section.start h2 {
+            font-size: 48px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        #mainPage .main-desc p {
+            font-size: 24px;
+        }
+        section.content h2 {
+            font-size: 21px;
+        }
+        section.content .content-container,
+        section.content .phone-content-container {
+            max-width: 408px;
+            justify-content: center;
+        }
+        article.phone-item .phone-text-item .title {
+            font-size: 36px;
+        }
+        article.phone-item .phone-text-item .description {
+            font-size: 18px;
+        }
+        section.content .price-content-container {
+            max-width: 340px;
+        }
+        article.review-card-slide {
+            width: 394px;
+            padding: 32px;
+            text-align: left;
+            gap: 26px;
+        }
+        article.review-card-slide .user {
+            justify-content: center;
+        }
+        section.start h2 {
+            font-size: 36px;
+        }
+        #companyInfo {
+            padding: 0;
+        }
     }
 }
