@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>메뉴</h2>
+    <ul class="menu-list">
+      <li class="menu-item">
+        <h3 class="menu">사과</h3>
+        <p class="price">1000원</p>
+        <button class="add-cart">장바구니 추가</button>
+      </li>
+      <li class="menu-item">
+        <h3 class="menu">바나나</h3>
+        <p class="price">2000원</p>
+        <button class="add-cart">장바구니 추가</button>
+      </li>
+    </ul>
+    <h2>장바구니</h2>
+    <ul class="carts"></ul>
+    <script>
+      const $menuList = document.querySelector(".menu-list");
+      const $carts = document.querySelector(".carts");
+
+      $menuList.addEventListener("click", (e) => {
+        if (!e.target.classList.contains("add-cart")) return;
+
+        const $menuItemNodes = [...e.target.closest(".menu-item").children];
+        const [menu, price] = $menuItemNodes.slice(0, 2).map((node) => node.textContent);
+
+        $carts.innerHTML += `
+          <li>
+            <span>${menu}</span>  
+            <span>${price}</span>  
+          </li>
+        `;
+      });
+    </script>
+  </body>
+</html>
