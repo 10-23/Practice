@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .wrap {
+            margin: auto;
+            width: 500px;
+        }
+
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: salmon;
+            margin: 20px 0;
+        }
+
+        .inputContainer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .inputContainer input {
+            width: 340px;
+            border-left: 0;
+            border-right: 0;
+            border-top: 0;
+            font-size: 20px;
+        }
+
+        .inputContainer input:focus {
+            outline: none;
+        }
+
+        .addBtn {
+            width: 140px;
+            border: 10px solid salmon;
+            background-color: salmon;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .todoList {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .todoItem {
+            width: 500px;
+            display: flex;
+            margin-top: 15px;
+            justify-content: space-between;
+            font-size: 20px;
+            align-items: center;
+        }
+
+        .deleteBtn {
+            border: 10px solid salmon;
+            border-radius: 10px;
+            background-color: salmon;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .checked {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='wrap'>
+        <h1 class='title'>TODO LIST</h1>
+        <form action="" class='inputContainer'>
+            <input type="text" name='task' autocomplete='off'>
+            <button class='addBtn'>추가하기</button>
+        </form>
+        <div>
+            <ul class='todoList'>
+
+            </ul>
+        </div>
+    </div>
+    <script src="./실습4.js"></script>
+</body>
+
+</html>

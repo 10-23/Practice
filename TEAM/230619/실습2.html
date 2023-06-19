@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .box {
+            border: 1px solid #e1e1e1;
+            width: 200px;
+            line-height: 1.5;
+            margin: 20px;
+        }
+
+        .first {
+            font-size: 20px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <!-- <div class='box'>
+            <p class='first'>첫번째 게시글</p>
+            <p class='second'>첫번째 게시글입니닷</p>
+        </div>
+        <div class='box'>
+            <p class='first'>첫번째 게시글</p>
+            <p class='second'>첫번째 게시글입니닷</p>
+        </div> -->
+    </div>
+    <script>
+        const container = document.querySelector('.container')
+        container.innerHTML = `<div class='box'>
+            <p class='first'>첫번째 게시글</p>
+            <p class='second'>첫번째 게시글입니닷</p>
+        </div>
+        <div class='box'>
+            <p class='first'>첫번째 게시글</p>
+            <p class='second'>첫번째 게시글입니닷</p>
+        </div>
+        `
+    </script>
+</body>
+
+</html>

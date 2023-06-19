@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .goodsList {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .goodsList li {
+            list-style: none;
+            border: 1px solid #e1e1e1;
+            width: 300px;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .addBtn {
+            background-color: salmon;
+            color: #fff;
+            font-weight: 700;
+            border: 3px solid salmon;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .cartSection {
+            margin: 20px;
+        }
+
+        .cartSection h2 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .cartSection li {
+            display: flex;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='addGoodsSection'>
+        <label for="goodsName">상품이름</label>
+        <input type="text" class='addGoods'>
+        <label for="goodsPrice">상품가격</label>
+        <input type='number' class='addPrice'>
+        <button class='addGoodsBtn'>상품추가</button>
+    </div>
+    <div class='goodsSection'>
+        <ul class='goodsList'>
+            <li class='goodsItem'>
+                <p class='goodsName'>사과</p>
+                <p class='goodsPrice'>1000원</p>
+                <button class='addBtn'>장바구니에 추가</button>
+            </li>
+            <li class='goodsItem'>
+                <p class='goodsName'>바나나</p>
+                <p class='goodsPrice'>2000원</p>
+                <button class='addBtn'>장바구니에 추가</button>
+            </li>
+        </ul>
+    </div>
+    <div class='cartSection'>
+        <h2>장바구니</h2>
+        <ul class='cartList'></ul>
+    </div>
+
+    <script src="./실습1.js"></script>
+</body>
+
+</html>
