@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 3 - 실시간 채팅</title>
+    <style>
+    body {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: cadetblue;
+            color: aliceblue;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        main {
+            padding : 50px;
+        }
+        #chat {
+            margin: 0 auto 20px auto;
+            padding: 20px;
+            border: 3px dotted rgb(209, 206, 206);
+            border-radius: 10px;
+            width: 980px;   
+        }
+        .message {
+            margin-bottom: 5px;
+        }
+        .user {
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        #messageForm {
+            margin: 0 auto;
+            width: 980px;
+            display: flex;   
+        }
+        #messageForm input {
+            margin-right: 10px;
+        }
+        #messageForm button {
+            background-color:cornflowerblue;
+            border: none;
+            border-radius: 10px;
+            color: ghostwhite;
+            padding: 10px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>실시간 채팅</h1></header>
+    <main>
+        <section id="chat">
+            <div class="message">
+                <span class="user">User1:</span>
+                <span class="content">안녕하세요!</span>
+            </div>
+            <div class="message">
+                <span class="user">User2:</span>
+                <span class="content">반갑습니다!</span>
+            </div>
+        </section>
+        <form id="messageForm">
+            <input type="text" id="userInput" name="user" placeholder="사용자명"/>
+            <input type="text" id="messageInput" name="content" placeholder="메시지를 입력하세요"/>
+            <button type="submit">전송</button>
+        </form>
+    </main>
+    <script src="ex3.js"></script>
+</body>
+</html>

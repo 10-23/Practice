@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 2 - 게시판</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        header {
+            background-color: cadetblue;
+            color: aliceblue;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        .post-list {
+            margin-top: 30px;
+        }
+        .post {
+            border: 1px solid lightgray;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>게시판</h1></header>
+    <main>
+        <section class="post-list">
+            <div class="post">
+                <h3 class="title">첫 번째 게시글- HTML</h3>
+                <p class="content">안녕하세요!</p>
+            </div>
+            <div class="post">
+                <h3 class="title">두 번째 게시글 - HTML</h3>
+                <p class="content">반갑습니다!</p>
+            </div>              
+        </section>
+    </main>
+    <script src="ex2.js"></script>
+</body>
+</html>
