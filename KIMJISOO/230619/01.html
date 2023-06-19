@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x, y, z;
+        x = 10;
+        y = 20;
+        z = "10";
+
+        document.write("x > y : ", x > y, "<br>");
+        document.write("x < y : ", x < y, "<br>");
+        document.write("x >= y : ", x >= y, "<br>");
+        document.write("x <= y : ", x <= y, "<br>");
+
+        document.write(`x == z : ${x == z} <br>`);
+        document.write(`x === z : ${x === z} <br>`);
+        document.write(`x != y : ${x != y} <br>`);
+        document.write(`x != 10 : ${x != 10} <br>`);
+
+        const a = 4
+        const b = 20
+        // 1. a가 3보다 크고 5보다 작으면 a와 b를 더하고 그렇지 않으면 a와 b를 곱하세요.
+        if (3 < a < 5) {
+            console.log(a + b);
+        } else {
+            console.log(a * b);
+        }
+
+        // 2. a가 4이거나 b가 10이면 a와 b를 곱하세요.
+        if (a === 4 || b === 10) {
+            console.log(a * b);
+        }
+
+        // 3. a가 4이고 b가 20이면 a와 b를 곱하세요.
+        if (a === 4 && b === 20) {
+            console.log(a * b);
+        }
+    </script>
+</body>
+</html>

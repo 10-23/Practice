@@ -25,7 +25,7 @@
       const $menuList = document.querySelector(".menu-list");
       const $carts = document.querySelector(".carts");
 
-      $menuList.addEventListener("click", (e) => {
+      $menuList.addEventListener("click", (e) => { 
         if (!e.target.classList.contains("add-cart")) return;
 
         const $menuItemNodes = [...e.target.closest(".menu-item").children];

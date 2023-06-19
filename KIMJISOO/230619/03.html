@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(x, y) {
+            return x + y;
+        }
+        const sumArrow = (x, y) => x + y;
+        const sumXY = sumArrow;
+
+        document.write(sum(10, 20));
+        document.write("<br>");
+        document.write(sumArrow(10, 20));
+        document.write("<br>");
+        document.write(sumXY(10, 20));
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" type="button">클릭</button>
+    <input id="hello" type="text" onchange="onChange" />
+    <script>
+        function circleWidth(r) {
+            let width = r * r * 3.14;
+            return width;
+        }
+
+        document.write(circleWidth(10));
+
+        const btn = document.getElementById("btn");
+        const hello = document.getElementById("hello");
+
+        function startCon() {
+            console.log("it works");
+        }
+        btn.addEventListener("click", startCon);
+        hello.onchange = function() {
+            let newHello = hello.value;
+            console.log(newHello);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 1 - 장바구니 카트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            height: 70px;
+            background-color: cadetblue;
+            color: aliceblue;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-list {
+            display: block;
+            text-align: center;
+            padding: 50px 0;
+        }
+        .menu-item {
+            display: inline-flex;
+            padding: 15px 15px;
+            border: 3px dotted rgb(209, 206, 206);
+            border-radius: 10px;
+        }
+        .cart {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: fit-content;
+            margin: 15px auto;
+        }
+    </style>
+</head>
+<body>
+    <header>온라인 상점</header>
+    <main>
+        <section class="menu-list">
+            <h1>메뉴 리스트</h1>
+            <div class="menu-item">
+                <h3 class="item">복숭아</h3>
+                <p class="price">5,000원</p>
+                <button class="add-cart">장바구니 추가</button>
+            </div>
+            <div class="menu-item">
+                <h3 class="item">딸기</h3>
+                <p class="price">5,500원</p>
+                <button class="add-cart">장바구니 추가</button>
+            </div>
+        </section>
+        <section class="cart">
+            <h1>나의 장바구니</h1>
+            <ul class="my-cart"></ul>
+        </section>
+    </main>
+    <script src="ex1.js"></script>
+</body>
+</html>
