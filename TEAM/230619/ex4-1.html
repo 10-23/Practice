@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form class="add-input-form">
+      <input class="add-input" type="text" placeholder="할일을 입력하세요" name="todo" />
+      <button class="add-button">추가</button>
+    </form>
+    <ul class="todo-list">
+      <li class="todo-item">
+        <p class="contents">create-react-app 학습</p>
+        <button class="delete-button">삭제</button>
+      </li>
+      <li class="todo-item">
+        <p class="contents">Movie App 만들기</p>
+        <button class="delete-button">삭제</button>
+      </li>
+      <li class="todo-item">
+        <p class="contents">술먹기</p>
+        <button class="delete-button">삭제</button>
+      </li>
+    </ul>
+
+    <script>
+      const $addInputForm = document.querySelector(".add-input-form");
+      const $todoList = document.querySelector(".todo-list");
+
+      $addInputForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const contents = e.target.todo.value.trim();
+
+        if (contents === "") return;
+
+        $todoList.innerHTML += `
+          <li class="todo-item">
+            <p class="contents">${contents}</p>
+            <button class="delete-button">삭제</button>
+          </li>
+        `;
+
+        e.target.todo.value = "";
+      });
+
+      $todoList.addEventListener("click", (e) => {
+        if (!e.target.classList.contains("delete-button")) return;
+
+        e.target.closest(".todo-item").remove();
+      });
+    </script>
+  </body>
+</html>

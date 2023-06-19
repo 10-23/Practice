@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="post">
+      <!-- <div class="post">
+        <b class="title">첫 번째 게시글</b>
+        <p class="contents">안녕하세요!</p>
+      </div>
+      <div class="post">
+        <b class="title">두 번째 게시글</b>
+        <p class="contents">반갑습니다!</p>
+      </div> -->
+    </div>
+    <script>
+      const $post = document.querySelector(".post");
+
+      $post.innerHTML = `
+        <div class="post">
+          <div class="post">
+            <b class="title">첫 번째 게시글</b>
+            <p class="contents">안녕하세요!</p>
+          </div>
+          <div class="post">
+            <b class="title">두 번째 게시글</b>
+            <p class="contents">반갑습니다!</p>
+          </div>
+        </div>`;
+    </script>
+  </body>
+</html>
