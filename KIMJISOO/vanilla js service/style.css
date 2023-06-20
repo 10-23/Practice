@@ -1,0 +1,59 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+* {
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0px 0px 5px rgb(87, 87, 87);
+    font-family: "Pretendard Variable", Pretendard, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 20px;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#clock,
+#userNameForm,
+#greeting {
+    text-align: center;
+}
+
+form input {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1em;
+    text-shadow: none;
+    letter-spacing: 1px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2.5px solid #fff;
+    text-align: center;
+}
+
+input {
+    height: 40px;
+    padding: 10px;
+    opacity: 0.8;
+}
+
+input::placeholder {
+    color: #fff;
+}
+
+#clock {
+    font-size: 7em;
+    font-weight: 300;
+    margin-top: 16%;
+    margin-bottom: 24px;
+}
