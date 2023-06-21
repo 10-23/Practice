@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id='root'></div>
+    <script type='text/babel'>
+        function App(){
+            const [input, setInput] = React.useState("");
+            const [userName,setUserName] = React.useState([])
+
+            function click (e){
+                e.preventDefault()
+                setUserName((currentInput)=>[input,...currentInput])
+                setInput('')
+            }
+            function handleInput(e){
+                setInput(e.target.value)
+
+            }
+            return (
+                <div>
+                    <form action="">
+                        <label for="">user name : </label>
+                        <input type="text" onChange={handleInput} value={input}/>
+                        <button onClick={click}>로그인</button>
+                    </form>
+                    <ul>
+                        {userName.map((item,index)=><li key={index}>{item}</li>)}
+                    </ul>
+                </div>
+            )
+        }
+        ReactDOM.render(<App/>,root)
+    </script>
+</body>
+
+</html>

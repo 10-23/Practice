@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type='text/babel'>
+        function App(){
+            const [clock,setClock] = React.useState('')
+            function getTime() {
+            const date = new Date();
+            const hours = String(date.getHours()).padStart(2, '0');
+            const min = String(date.getMinutes()).padStart(2, '0');
+            const sec = String(date.getSeconds()).padStart(2, '0');
+             setClock(`${hours} : ${min} : ${sec}`)
+        }   
+            getTime
+            setInterval(getTime, 1000);
+            
+            return (
+                <div>{clock}</div>
+            )
+        }
+        ReactDOM.render(<App/>,root)
+    </script>
+</body>
+
+</html>

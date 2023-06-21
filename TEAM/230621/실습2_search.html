@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id='root'></div>
+
+
+    <script type='text/babel'>
+        function App(){
+            const [city,setCity] = React.useState('')
+            const [url,setUrl] = React.useState('')
+            function saveCity(e){
+                setCity(e.target.value)
+            }
+            function searchFunc() {
+                setUrl(`https://www.goodchoice.kr/product/result?keyword=${city}`)
+        }
+            return (
+                
+                <div>
+                    <h1>가고싶은 여행지를 검색해봐요!</h1>
+                    <main>
+                        <label htmlFor="city">가고싶은 도시 : </label>
+                        <input onChange={saveCity}/>
+                        <button onClick={searchFunc}><a href={url}>검색하기</a></button>
+
+                    </main>
+                </div>
+            )
+        }
+        ReactDOM.render(<App/>,root)
+    </script>
+</body>
+
+</html>
