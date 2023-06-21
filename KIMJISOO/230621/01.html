@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+</head>
+<body>
+    <div id="weather"></div>
+    <div id="city"></div>
+    <script>
+        const weather = document.querySelector("#weather");
+        const city = document.querySelector("#city");
+        const API_KEY = `92458b8460ef057c6345ba0532fe4491`;
+
+        function getWeather(lat, lon) {
+            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                const temp = Math.round(data.main.temp);
+                const humidity = data.main.humidity;
+                const name = data.name;
+                weather.innerText = `${temp}℃ & ${humidity}%`;
+                city.innerText = `@${name}`;
+            });
+        }
+
+        function handleGeoSuccess(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            getWeather(latitude, longitude);
+        }
+
+        function handleGeoError() {
+            console.log("err!!");
+        }
+
+        function init() {
+            navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
+
+        }
+
+        init();
+    </script>
+</body>
+</html>

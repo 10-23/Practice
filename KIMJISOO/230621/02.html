@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const root = document.querySelector("#root");
+        const Greeting = (props) => {
+            return React.createElement("h1", null, `Hello, ${props.name}`)
+        }
+
+        // ReactDOM.render(React.createElement("h1", null, "hello"), root);
+        // ReactDOM.render(React.createElement(Greeting), root);
+        // ReactDOM.render(React.createElement(Greeting, {name : "성춘향"}), root);
+        ReactDOM.render(<Greeting name={"홍길동"}/>, root);
+    </script>
+</body>
+</html>
