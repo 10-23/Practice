@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type='text/babel'>
+        function App(){
+            const [operator,setOperator]=React.useState('+')
+            const [firstNum,setFirstNum] =React.useState()
+            const [secondNum,setSecondNum] =React.useState()
+            const [result,setResult] = React.useState()
+
+            const handleOperator = (e)=>{
+                setOperator(e.target.value)
+            }
+            const handleFirst = (e) =>{
+                setFirstNum(e.target.value)
+            }
+            const handleSecond = (e) =>{
+                setSecondNum(e.target.value)
+            }
+            
+            const calculator = (n1, operator, n2)=>{
+            switch (operator) {
+              case '+':
+                setResult(Number(n1) + Number(n2))
+                break;
+              case '-':
+              setResult(Number(n1) - Number(n2))
+                break;
+              case '*':
+              setResult(Number(n1) * Number(n2))
+                break;
+              case '/':
+              setResult(Number(n1) / Number(n2))
+                break;
+              default:
+                break;
+            }
+            return String(result);
+            }
+            function click(){
+            calculator(firstNum,operator,secondNum)
+            setFirstNum('')
+            setSecondNum('')
+            }
+            return (
+                <div>
+                    <input type="number" onChange={handleFirst} value={firstNum}/>
+                    <select name="" id="" onChange={handleOperator}>
+                        <option value="+">+</option>    
+                        <option value="-">-</option>    
+                        <option value="*">*</option>    
+                        <option value="/">/</option>    
+                    </select>
+                    <input type="number" onChange={handleSecond} value={secondNum}/>    
+                    <button onClick={click}>계산하기</button>
+                    <div>answer is {result}</div>
+                </div>
+            )
+        }
+        ReactDOM.render(<App/>,root)
+    </script>
+</body>
+
+</html>
