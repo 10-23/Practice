@@ -3,36 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>실습1 - 자기소개서</title>
+    <title>실습2 - 여기어때</title>
     <!-- React CDN -->
     <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
 
     <!-- Babel CDN (for JSX support) -->
     <script src="https://unpkg.com/@babel/standalone@7.12.7/babel.min.js"></script>
-
-    <script src="https://kit.fontawesome.com/158c15f629.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="./assets/favicon.ico">
 </head>
 <body>
     <div id="root"></div>
     <script type="text/babel">
         const root = document.querySelector("#root")
-
-        const Profile = () => {
+        const Search = () => {
             return (
                 <div>
-                    <h1>Jisoo Kim | Frontent Developer</h1>
-                    <div>
-                        <a href="https://github.com/zi9oojj"><i class="fa-brands fa-github"></i> https://github.com/zi9oojj</a><br/ >
-                        <i class="fa-solid fa-envelope"></i> jisoojamie@gmail.com
-                    </div>
-                    <h3>안녕하세요, 김지수입니다.</h3>
+                    <h1>가고싶은 여행지를 검색해봐요!</h1>
+                    <form action="https://www.goodchoice.kr/product/result" method="get" target="_self">
+                        <label htmlFor="search">가고싶은 도시 : </label>
+                        <input id="search" type="text" name="keyword" />
+                        <input type="submit" value="검색하기" />
+                    </form>    
                 </div>
             )
         }
-
-        ReactDOM.render(<Profile />, root);
+        ReactDOM.render(<Search / >, root);
     </script>
 </body>
 </html>

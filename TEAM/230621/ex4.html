@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습4 - 이미지 랜덤 변환</title>
+    <!-- React CDN -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+
+    <!-- Babel CDN (for JSX support) -->
+    <script src="https://unpkg.com/@babel/standalone@7.12.7/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const root = document.querySelector("#root");
+
+        const RandomImage = () => {
+            const [imageSrc, setImageSrc] = React.useState("https://www.ghibli.jp/gallery/chihiro014.jpg");
+            const imgUrl = [
+                "https://www.ghibli.jp/gallery/chihiro014.jpg",
+                "https://www.ghibli.jp/gallery/chihiro003.jpg",
+                "https://www.ghibli.jp/gallery/chihiro043.jpg",
+                "https://www.ghibli.jp/gallery/howl050.jpg",
+                "https://www.ghibli.jp/gallery/howl044.jpg",
+                "https://www.ghibli.jp/gallery/howl012.jpg",
+                "https://www.ghibli.jp/gallery/kazetachinu024.jpg",
+                "https://www.ghibli.jp/gallery/kazetachinu050.jpg",
+            ];
+
+            const getRandomImage = () => {
+                const randomIdx = Math.floor(imgUrl.length * Math.random());
+                return setImageSrc(imgUrl[randomIdx]);
+            }
+
+            return (
+                <div>
+                    <h1>이미지를 클릭해보세요😁</h1>
+                    <img src={imageSrc} alt="random image" style={{ width : "500px", cursor : "pointer" }} onClick={getRandomImage} /> 
+                </div>
+            )
+        }
+        ReactDOM.render(<RandomImage />, root);
+    </script>
+</body>
+</html>

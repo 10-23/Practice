@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습7 - 계산기</title>
+    <!-- React CDN -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+
+    <!-- Babel CDN (for JSX support) -->
+    <script src="https://unpkg.com/@babel/standalone@7.12.7/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const root = document.querySelector("#root");
+
+        const Calculator = () => {
+            const [num1, setNum1] = React.useState('');
+            const [num2, setNum2] = React.useState('');
+            const [result, setResult] = React.useState('');
+
+            const handleNum1 = (e) => {
+                e.preventDefault();
+                setNum1(e.target.value);
+            }
+            const handleNum2 = (e) => {
+                e.preventDefault();
+                setNum2(e.target.value);
+            }
+
+            const handleAdd = () => {
+            return setResult(parseInt(num1) + parseInt(num2));
+            }
+            const handleSubtract = () => {
+                return setResult(parseInt(num1) - parseInt(num2));
+            }
+            const handleMultiply = () => {
+                return setResult(parseInt(num1) * parseInt(num2));
+            }
+            const handleDivide = () => {
+                return setResult(parseInt(num1) / parseInt(num2));
+            }
+            const handleReset = () => {
+                setNum1('');
+                setNum2('');
+                setResult('');
+                
+            }
+
+            return (
+                <div>
+                    <h1>계산기</h1>
+                    <input type="number" name="num1" value={num1} onChange={handleNum1} /> <br/><br />
+                    <input type="number" name="num2" value={num2} onChange={handleNum2} /> <br /><br />
+                    <button onClick={handleAdd}> + </button>
+                    <button onClick={handleSubtract}> - </button>
+                    <button onClick={handleMultiply}> x </button>
+                    <button onClick={handleDivide}> ÷ </button>
+                    <button onClick={handleReset}>초기화</button>
+                    <h3>결과 : {result}</h3>
+                </div>
+            )
+        }
+
+        ReactDOM.render(<Calculator />, root);
+    </script>
+</body>
+</html>

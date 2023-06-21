@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습6 - 이미지 슬라이더</title>
+    <!-- React CDN -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+
+    <!-- Babel CDN (for JSX support) -->
+    <script src="https://unpkg.com/@babel/standalone@7.12.7/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const root = document.querySelector("#root");
+
+        const ImageSlider = () => {
+            const [currentImageIdx, setCurrentImageIdx] = React.useState(0);
+            const imgUrl = [
+                "https://www.ghibli.jp/gallery/chihiro014.jpg",
+                "https://www.ghibli.jp/gallery/chihiro003.jpg",
+                "https://www.ghibli.jp/gallery/chihiro043.jpg",
+                "https://www.ghibli.jp/gallery/howl050.jpg",
+                "https://www.ghibli.jp/gallery/howl044.jpg",
+                "https://www.ghibli.jp/gallery/howl012.jpg",
+                "https://www.ghibli.jp/gallery/kazetachinu024.jpg",
+                "https://www.ghibli.jp/gallery/kazetachinu050.jpg",
+            ];
+
+            const handlePrev = () => {
+                setCurrentImageIdx((prev) => {
+                    if (prev === 0) {
+                        return imgUrl.length - 1;
+                    } else {
+                        return prev - 1;
+                    }
+                });
+            };
+
+            const handleNext = () => {
+                setCurrentImageIdx((next) => {
+                    if (next === imgUrl.length -1) {
+                        return 0;
+                    } else {
+                        return next + 1;
+                    }
+                });
+            }
+
+            return (
+                <div>
+                    <h1>화살표를 눌러보세용🙃</h1>
+                    <img src={imgUrl[currentImageIdx]} alt="image slider" style={{width: "500px"}}/>
+                    <button onClick={handlePrev}>&lt;</button>
+                    <button onClick={handleNext}>&gt;</button>
+                </div>
+            )
+        }
+        ReactDOM.render(<ImageSlider />, root);
+    </script>
+</body>
+</html>

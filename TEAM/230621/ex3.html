@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습3 - 로그인 폼</title>
+    <!-- React CDN -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+
+    <!-- Babel CDN (for JSX support) -->
+    <script src="https://unpkg.com/@babel/standalone@7.12.7/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const root = document.querySelector("#root");
+
+        const LoginForm = () => {
+            const [userName, setUserName] = React.useState('');
+            const [password, setPassword] = React.useState('');
+
+            const handleLogIn = (e) => {
+                e.preventDefault();
+                console.log("Username : ",userName);
+                console.log("Password : ",password);
+            }
+            const handleUserNameChange = (e) => {
+                e.preventDefault();
+                setUserName(e.target.value);
+            }
+            const handlePasswordChange = (e) => {
+                e.preventDefault();
+                setPassword(e.target.value);
+            }
+
+            return (
+                <div>
+                    <form onSubmit={handleLogIn}>
+                        <div>
+                            <label htmlFor="userName">Username : </label>
+                            <input id="userName" type="text" name="userName" onChange={handleUserNameChange} />
+                        </div>
+                        <div>
+                            <label htmlFor="password">Password : </label>
+                            <input id="password" type="password" name="password" onChange={handlePasswordChange} />
+                        </div>
+                        <input type="submit" value="LogIn"/>
+                    </form>
+                </div>
+            )
+        }
+        
+        ReactDOM.render(<LoginForm />, root);
+    </script>
+</body>
+</html>
