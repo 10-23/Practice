@@ -60,6 +60,7 @@
         font-weight: 700;
       }
       .todo-list {
+        width: 500px;
         margin-top: 30px;
         color: white;
         font-size: 20px;
@@ -67,7 +68,7 @@
       }
       .todo-item {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
       }
     </style>
   </head>
@@ -78,13 +79,14 @@
       <form class="greeting-form">
         <input type="text" placeholder="이름을 입력해주세요" name="name" />
       </form>
+      <ul class="todo-list"></ul>
     </div>
     <script>
       const $image = document.querySelector(".image");
       const $greetingForm = document.querySelector(".greeting-form");
       const $clock = document.querySelector(".clock");
       const $weather = document.querySelector(".weather");
-      let $todoList = null;
+      const $todoList = document.querySelector(".todo-list");
       let $todoInput = null;
 
       const imgURL = [
@@ -132,7 +134,7 @@
           `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${"5f55b28e49b0c3ec0139d01faf8c1c88"}`
         );
         const data = await res.json();
-        console.log(data);
+
         return data;
       };
 
@@ -156,7 +158,7 @@
       });
 
       $greetingForm.addEventListener("submit", (e) => {
-        if ($todoList) return;
+        if ($todoInput) return;
         e.preventDefault();
 
         const value = e.target.name.value.trim();
@@ -164,10 +166,8 @@
         $greetingForm.innerHTML = `
           <div class="greeting">Hello! ${value}</div>
           <input class="todo-input" placeholder="할일을 입력해주세요" />
-          <ul class="todo-list"></ul>
         `;
 
-        $todoList = document.querySelector(".todo-list");
         $todoInput = document.querySelector(".todo-input");
         $todoInput.focus();
       });
@@ -175,15 +175,22 @@
       $greetingForm.addEventListener("submit", (e) => {
         const value = $todoInput.value.trim();
 
-        if (!$todoList || !$todoInput || !value) return;
+        if (!$todoInput || !value) return;
         e.preventDefault();
 
         $todoList.innerHTML += `
           <li class="todo-item">
-            <div>${value}</div>  
-            <button>❌</button>  
+            <div class="todo-contents">${value}</div>  
+            <button class="todo-delete">❌</button>  
           </li>
         `;
+        $todoInput.value = "";
+      });
+
+      $todoList.addEventListener("click", (e) => {
+        if (!e.target.matches(".todo-delete")) return;
+
+        e.target.closest(".todo-item").remove();
       });
     </script>
   </body>
