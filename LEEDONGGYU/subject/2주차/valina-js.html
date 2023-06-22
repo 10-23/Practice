@@ -51,19 +51,43 @@
         font-size: 60px;
         font-weight: 700;
       }
+      .weather {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .todo-list {
+        width: 500px;
+        margin-top: 30px;
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .todo-item {
+        display: flex;
+        justify-content: space-between;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="clock"></div>
+      <div class="weather"></div>
       <form class="greeting-form">
         <input type="text" placeholder="이름을 입력해주세요" name="name" />
       </form>
+      <ul class="todo-list"></ul>
     </div>
     <script>
       const $image = document.querySelector(".image");
       const $greetingForm = document.querySelector(".greeting-form");
       const $clock = document.querySelector(".clock");
+      const $weather = document.querySelector(".weather");
+      const $todoList = document.querySelector(".todo-list");
+      let $todoInput = null;
 
       const imgURL = [
         "https://t1.daumcdn.net/cfile/tistory/99E3B33E5B2852742A",
@@ -96,20 +120,77 @@
         setInterval(createClock, 1000);
       };
 
-      document.addEventListener("DOMContentLoaded", () => {
+      const getGeolocation = async () => {
+        const { coords } = await new Promise((resolve, reject) =>
+          navigator.geolocation.getCurrentPosition(resolve, reject)
+        );
+        return coords;
+      };
+
+      const fetchWeather = async () => {
+        const { latitude, longitude } = await getGeolocation();
+
+        const res = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${"5f55b28e49b0c3ec0139d01faf8c1c88"}`
+        );
+        const data = await res.json();
+
+        return data;
+      };
+
+      const weather = async () => {
+        const { name, weather, clouds } = await fetchWeather();
+        const { description, icon, id, main } = weather[0];
+        const IconURL = `http://openweathermap.org/img/w/${icon}.png`;
+
+        $weather.innerHTML = `
+          <div>${name}</div>
+          <div>${clouds.all}</div>
+          <img src="${IconURL}" alt="날씨 아이콘" />
+        `;
+      };
+
+      document.addEventListener("DOMContentLoaded", async () => {
         document.body.style.backgroundImage = `url(${imgURL[Math.floor(imgURL.length * Math.random())]})`;
 
         clock();
+        weather();
       });
 
       $greetingForm.addEventListener("submit", (e) => {
+        if ($todoInput) return;
         e.preventDefault();
 
         const value = e.target.name.value.trim();
 
         $greetingForm.innerHTML = `
           <div class="greeting">Hello! ${value}</div>
+          <input class="todo-input" placeholder="할일을 입력해주세요" />
         `;
+
+        $todoInput = document.querySelector(".todo-input");
+        $todoInput.focus();
+      });
+
+      $greetingForm.addEventListener("submit", (e) => {
+        const value = $todoInput.value.trim();
+
+        if (!$todoInput || !value) return;
+        e.preventDefault();
+
+        $todoList.innerHTML += `
+          <li class="todo-item">
+            <div class="todo-contents">${value}</div>  
+            <button class="todo-delete">❌</button>  
+          </li>
+        `;
+        $todoInput.value = "";
+      });
+
+      $todoList.addEventListener("click", (e) => {
+        if (!e.target.matches(".todo-delete")) return;
+
+        e.target.closest(".todo-item").remove();
       });
     </script>
   </body>
