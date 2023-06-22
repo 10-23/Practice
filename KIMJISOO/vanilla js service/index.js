@@ -57,6 +57,7 @@ const onGreeting = (userName) => {
   greeting.appendChild(resetButton);
   resetButton.addEventListener("click", () => {
     localStorage.removeItem("userNameKEY");
+    localStorage.removeItem("todoKEY");
     window.location.reload();
   });
 };
@@ -72,8 +73,8 @@ if (savedUserName === null) {
 
 // 실시간 위치 및 날씨
 const API_KEY = `92458b8460ef057c6345ba0532fe4491`;
-const weather = document.querySelector("#weather span:first-child");
-const city = document.querySelector("#weather span:last-child");
+const weather = document.querySelector("#weather p:first-child");
+const city = document.querySelector("#weather p:last-child");
 
 const onGeoSuccess = (position) => {
   const lat = position.coords.latitude;
@@ -87,7 +88,7 @@ const onGeoSuccess = (position) => {
       const temp = Math.round(data.main.temp);
       const cityName = data.name;
       weather.innerText = `${weatherMain} / ${temp}℃`;
-      city.innerText = `@${cityName}`;
+      city.innerText = `@ ${cityName}`;
     });
 };
 
@@ -96,3 +97,70 @@ const onGeoError = () => {
 };
 
 navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
+
+// To-do List
+const todoForm = document.querySelector("#todoForm");
+const todoInput = todoForm.querySelector("input");
+const todoList = document.querySelector("#todoList");
+
+let todoArr = [];
+
+const saveTodos = () => {
+  localStorage.setItem("todoKEY", JSON.stringify(todoArr));
+};
+
+const doneTodo = (e) => {
+  const target = e.target.parentElement.parentElement;
+  target.classList.add("done-todo");
+};
+
+const deleteTodo = (e) => {
+  const target = e.target.parentElement.parentElement;
+  target.remove();
+  todoArr = todoArr.filter((todo) => todo.id != parseInt(target.id));
+  saveTodos();
+};
+
+const showTodo = (todo) => {
+  const todoItem = document.createElement("li");
+  todoItem.id = todo.id;
+  todoItem.textContent = todo.text;
+
+  const buttonWrap = document.createElement("div");
+  const doneButton = document.createElement("button");
+  const deleteButton = document.createElement("button");
+  doneButton.textContent = "완료";
+  deleteButton.textContent = "삭제";
+
+  doneButton.addEventListener("click", doneTodo);
+  deleteButton.addEventListener("click", deleteTodo);
+
+  buttonWrap.appendChild(doneButton);
+  buttonWrap.appendChild(deleteButton);
+  todoItem.appendChild(buttonWrap);
+  todoList.appendChild(todoItem);
+};
+
+const addTodo = (e) => {
+  e.preventDefault();
+  const todo = todoInput.value;
+  if (todo === "") return;
+  todoInput.value = "";
+  const objTodo = {
+    text: todo,
+    id: Date.now(),
+  };
+  todoArr.push(objTodo);
+  showTodo(objTodo);
+  saveTodos();
+};
+
+todoForm.addEventListener("submit", addTodo);
+
+const savedTodos = localStorage.getItem("todoKEY");
+
+if (savedTodos) {
+  const parsedTodos = JSON.parse(savedTodos);
+  todoArr = parsedTodos;
+  parsedTodos.forEach(showTodo);
+}

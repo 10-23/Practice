@@ -9,8 +9,8 @@
 <body>
     <main>
         <div id="weather">
-            <span></span>
-            <span></span>
+            <p></p>
+            <p></p>
         </div>
         <div id="clock">
             00:00:00
@@ -19,6 +19,10 @@
             <input class="user-name" type="text" placeholder="이름을 입력해주세요😊">
         </form>
         <div id="greeting" class="hidden"></div>
+        <form id="todoForm">
+            <input type="text" placeholder="할 일을 작성해주세요." maxlength="20">
+        </form>
+        <ul id="todoList"></ul>
     </main>
     <script src="index.js"></script>
 </body>

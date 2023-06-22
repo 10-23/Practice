@@ -22,8 +22,15 @@ body {
     display: none;
 }
 
+.done-todo {
+    text-decoration: line-through;
+    font-style: italic;
+}
+
 #clock,
-#userNameForm {
+#userNameForm,
+#todoForm,
+#todoList {
     text-align: center;
 }
 
@@ -58,7 +65,7 @@ input::placeholder {
 #clock {
     font-size: 7em;
     font-weight: 300;
-    margin-top: 16%;
+    margin-top: 12%;
     margin-bottom: 24px;
 }
 
@@ -68,7 +75,8 @@ input::placeholder {
     gap: 10px;
 }
 
-#greeting button {
+#greeting button,
+#todoList button {
     background-color: transparent;
     border: 1px #fff solid;
     border-radius: 10px;
@@ -76,4 +84,28 @@ input::placeholder {
     height: 2em;
     margin: auto 0;
     cursor: pointer;
+}
+
+#todoForm input {
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+}
+
+#todoList {
+    list-style: none;
+    font-size: 18px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+#todoList li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#todoList div {
+    display: flex;
+    gap: 5px;
 }
