@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const root = document.getElementById("root");
+
+      const Button = ({ color, backgroundColor, children }) => {
+        return <button style={{ color, backgroundColor, border: "none" }}>{children}</button>;
+      };
+
+      const App = () => {
+        const [count, setCounter] = React.useState(0);
+        const handleClick = () => setCounter((prev) => prev + 1);
+
+        return (
+          <>
+            <h1>Total Clicks {count}</h1>
+            <button onClick={handleClick}>click me</button>
+            <Button color="red" backgroundColor="white">
+              클릭
+            </Button>
+            <Button color="blue" backgroundColor="green">
+              안녕
+            </Button>
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>
