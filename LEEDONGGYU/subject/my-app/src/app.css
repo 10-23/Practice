@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.greeting-form {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.greeting-form input {
+  padding: 10px 20px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  caret-color: white;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.greeting-form input::placeholder {
+  color: white;
+}
+
+.clock {
+  display: flex;
+  gap: 10px;
+  color: white;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.todo-list {
+  width: 500px;
+  margin-top: 30px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+}
