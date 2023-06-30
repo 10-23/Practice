@@ -5,6 +5,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Link to="/">Movie23</Link>
+      <Link to="/favorite">My Favorite💖</Link>
     </header>
   );
 };
