@@ -16,6 +16,11 @@ const GlobalStyles = createGlobalStyle`
         text-decoration: none;
         color: inherit;
     }
+    html {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     html, body, #root {
         height: 100%;
     }
@@ -28,9 +33,9 @@ const GlobalStyles = createGlobalStyle`
     }
     body {
         font-family: 'Noto Sans KR', sans-serif;
-    }
-    #root {
-        display: flex;
+        padding: 0;
+        width: 320px;
+        height: 568px;
     }
     h2 {
         margin: 0;
