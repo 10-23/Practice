@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import PrevArrow from "../assets/prev_arrow.svg";
 import Instagram from "../assets/instagram.svg";
 import { ReactComponent as Heart } from "../assets/Heart.svg";
@@ -15,6 +15,13 @@ const SHeader = styled.header`
   display: flex;
   justify-content: space-around;
   margin-bottom: 24px;
+`;
+
+const SBackButton = styled.button`
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 `;
 
 const STitle = styled.h4`
@@ -100,16 +107,23 @@ const SMenu = styled.div`
 `;
 
 const Cafe = ({ cafes = DUMMY_CAFES }) => {
+  const navigate = useNavigate();
   const { pathname } = useLocation();
 
   const { address, businessHours, isLike, menu, phoneNumber } = cafes.find(
     (cafe) => cafe.id === +pathname.split("/").at(-1)
   );
 
+  const back = () => {
+    navigate(-1);
+  };
+
   return (
     <div>
       <SHeader>
-        <img src={PrevArrow} alt="뒤로가기" />
+        <SBackButton onClick={back}>
+          <img src={PrevArrow} alt="뒤로가기" />
+        </SBackButton>
         <STitle>카페 여기</STitle>
         <SSocial>
           <img src={Instagram} alt="인스타그램" />
