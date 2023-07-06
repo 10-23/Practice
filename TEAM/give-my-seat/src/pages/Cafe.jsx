@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import PrevArrow from "../assets/prev_arrow.svg";
 import Instagram from "../assets/instagram.svg";
-import { ReactComponent as Heart } from "../assets/Heart.svg";
-import { ReactComponent as HeartFilled } from "../assets/HeartFilled.svg";
+import heart from "../assets/Heart.svg";
+import heartFilled from "../assets/HeartFilled.svg";
 import { ReactComponent as Location } from "../assets/location.svg";
 import { ReactComponent as Phone } from "../assets/phone.svg";
 import { ReactComponent as Clock } from "../assets/clock.svg";
@@ -110,24 +110,20 @@ const Cafe = ({ cafes = DUMMY_CAFES }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  const { address, businessHours, isLike, menu, phoneNumber } = cafes.find(
+  const { id, title, address, businessHours, isLike, menu, phoneNumber } = cafes.find(
     (cafe) => cafe.id === +pathname.split("/").at(-1)
   );
-
-  const back = () => {
-    navigate(-1);
-  };
 
   return (
     <div>
       <SHeader>
-        <SBackButton onClick={back}>
+        <SBackButton onClick={() => navigate(-1)}>
           <img src={PrevArrow} alt="뒤로가기" />
         </SBackButton>
-        <STitle>카페 여기</STitle>
+        <STitle>{title}</STitle>
         <SSocial>
           <img src={Instagram} alt="인스타그램" />
-          {isLike ? <HeartFilled /> : <Heart />}
+          <img src={isLike ? heartFilled : heart} alt="하트" />
         </SSocial>
       </SHeader>
       <SMain>
@@ -147,7 +143,7 @@ const Cafe = ({ cafes = DUMMY_CAFES }) => {
               <span>{phoneNumber}</span>
             </div>
           </SDetail>
-          <SLink to="/seat">좌석 현황</SLink>
+          <SLink to={`/main/${id}/seat`}>좌석 현황</SLink>
         </SInformation>
         <SMenu>
           <h5>메뉴</h5>

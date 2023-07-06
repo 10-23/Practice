@@ -1,8 +1,9 @@
-import styled from 'styled-components';
-import heart from '../assets/HeartFilled.svg';
-import unHeart from '../assets/Heart.svg';
-import cafejeogi from '../assets/cafe jeogi.png';
-import DUMMY_CAFES from '../mocks/cafes';
+import styled from "styled-components";
+import heart from "../assets/HeartFilled.svg";
+import unHeart from "../assets/Heart.svg";
+import cafejeogi from "../assets/cafe jeogi.png";
+import DUMMY_CAFES from "../mocks/cafes";
+import { Link } from "react-router-dom";
 
 const Title = styled.h1`
   font-size: 20px;
@@ -64,21 +65,23 @@ const Main = () => {
       <List>
         <Title>구독리스트</Title>
         {DUMMY_CAFES.map((item, idx) => (
-          <Item key={idx}>
-            <img src={cafejeogi} alt="카페이미지" />
-            <Box>
-              <div className="title">
-                <p>{item.title}</p>
-                <img src={item.isLike ? heart : unHeart} alt="하트" />
-              </div>
-              <p className="address">{item.address}</p>
-              <div className="hash">
-                {item.hashTags.map((item, idx) => (
-                  <p key={idx}>{item}</p>
-                ))}
-              </div>
-            </Box>
-          </Item>
+          <Link to={`./${item.id}`}>
+            <Item key={idx}>
+              <img src={cafejeogi} alt="카페이미지" />
+              <Box>
+                <div className="title">
+                  <p>{item.title}</p>
+                  <img src={item.isLike ? heart : unHeart} alt="하트" />
+                </div>
+                <p className="address">{item.address}</p>
+                <div className="hash">
+                  {item.hashTags.map((item, idx) => (
+                    <p key={idx}>{item}</p>
+                  ))}
+                </div>
+              </Box>
+            </Item>
+          </Link>
         ))}
       </List>
     </>
