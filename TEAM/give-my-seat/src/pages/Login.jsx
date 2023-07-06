@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import logo from '../assets/logo_with_text.svg';
-import googleLogo from '../assets/google.svg';
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import styled from "styled-components";
+import logo from "../assets/logo_with_text.svg";
+import googleLogo from "../assets/google.svg";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Body = styled.div`
   display: flex;
@@ -61,8 +61,8 @@ const Logo = styled.h1`
 
 const Login = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -70,11 +70,11 @@ const Login = () => {
     setPassword(e.target.value);
   };
   const submit = (e) => {
-    if (email !== '' && password !== '') {
-      navigate('/main');
+    if (email !== "" && password !== "") {
+      navigate("/main");
     } else {
       e.preventDefault();
-      alert('이메일과 패스워드를 입력해주세요');
+      alert("이메일과 패스워드를 입력해주세요");
     }
   };
   return (
