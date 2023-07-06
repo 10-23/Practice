@@ -26,6 +26,7 @@ const SBarista = styled(Barista)`
 const SLink = styled(Link)`
   font-size: 14px;
   color: var(--primary-color);
+  z-index: 1;
 `;
 
 const Home = () => {
