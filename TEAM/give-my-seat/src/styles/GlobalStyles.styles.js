@@ -33,7 +33,7 @@ const GlobalStyles = createGlobalStyle`
     }
     body {
         font-family: 'Noto Sans KR', sans-serif;
-        padding: 22px 10px;
+        margin: 22px 10px;
         width: 320px;
         height: 568px;
     }

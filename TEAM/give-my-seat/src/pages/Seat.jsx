@@ -6,7 +6,6 @@ import seats from "../mocks/seats";
 const Body = styled.div`
   display: flex;
   height: 100%;
-  border: 1px solid red;
 `;
 
 const Title = styled.div`
@@ -14,7 +13,7 @@ const Title = styled.div`
   font-weight: 700;
   font-size: 20px;
   display: flex;
-  gap: 80px;
+  gap: 90px;
   margin: 22px 0 87px 10px;
 `;
 
@@ -33,7 +32,7 @@ const SeatsBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 10px;
+  margin: 0 20px;
 `;
 
 const SeatsContainer = styled.div`
